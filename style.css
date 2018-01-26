@@ -6,6 +6,17 @@ body{
   margin: 0;
   padding: 0;
 }
+.miss{
+  background: url(miss_transparent.png) no-repeat center;
+  background-size: contain;
+}
+.ship-hit{
+  background: url('ship_transparent.png') no-repeat center;
+  background-size: contain;
+}
+.stop{
+  transform: translate(0);
+}
 #message-area{
   position: absolute;
   top: 100px;
@@ -16,9 +27,9 @@ body{
   color: #73932D;
   border: 1px solid #73932D;
   text-align: center;
-  transition: 7s;
-  //transform: translateY(-200%);
-  opacity: 0;
+  transition: .5s;
+  transform: translateY(-200%);
+  //opacity: 0;
 }
 #message-area p{
   text-align: center;
@@ -26,11 +37,11 @@ body{
   margin: 0;
 }
 #battel-ship{
-  margin: 25px auto;
-  background: url('https://talesofatechnophile.files.wordpress.com/2015/05/board.jpg')center;
+  margin: -35px auto 0 auto;
+  background: url(https://talesofatechnophile.files.wordpress.com/2015/05/board.jpg)center;
   background-size: cover;
   width: 800px;
-  height: 618px;
+  height: 620px;
   transition: 3s;
   opacity: 0;
   overflow: hidden;
@@ -43,7 +54,8 @@ body{
 table{
   width: 66%;
   position: relative;
-  top: 52px;
+  top: 49px;
+  left: -3px;
   margin: 0 auto;
 }
 table tr{
@@ -52,7 +64,7 @@ table tr{
 table tr td{
   width: 70px;
   text-align: center;
-  border: 1px solid #fff;
+  border: 1px solid #73932D;
 }
 form{
   color: #73932D;
@@ -70,4 +82,10 @@ input:first-of-type{
   margin-bottom: 25px;
   height: 30px;
   font-size: 16px;
+}
+#fire-btn:hover{
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  font-weight: bold;
 }
