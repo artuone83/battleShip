@@ -1,15 +1,4 @@
 
-let hit = 0;
-
-let messageArea = document.getElementById('message-area');
-let message = document.getElementById('message');
-
-let fireButton = document.getElementById('fire-btn');
-fireButton.addEventListener('click', shipHit);
-
-let shipPosition_1 = document.getElementById('A4');
-let shipPosition_2 = document.getElementById('B2');
-let shipPosition_3 = document.getElementById('C6');
 
 window.onload = function (){
 
@@ -17,6 +6,14 @@ window.onload = function (){
   preventEnterInput();
 
 }
+
+let hit = 0;
+
+let messageArea = document.getElementById('message-area');
+let message = document.getElementById('message');
+
+let fireButton = document.getElementById('fire-btn');
+fireButton.addEventListener('click', shipHit);
 
 function preventEnterInput(){
 
@@ -53,7 +50,13 @@ function reset(){
 function shipHit (){
   let coord = document.getElementById('coordinates');
   //coord.preventDefault();
-  let guess = coord.value.toUpperCase();
+  let guess = coord.value;
+
+
+
+  let shipPosition_1 = document.getElementById('A4');
+  let shipPosition_2 = document.getElementById('B2');
+  let shipPosition_3 = document.getElementById('C6');
 
   if (guess == shipPosition_1.getAttribute('id')){
 
@@ -64,9 +67,13 @@ function shipHit (){
 
   console.log(hit);
   reset();
+  /*setInterval( function (){
+    messageArea.style.transform = 'translateY(-200%)';
+  }, 3000);*/
 
 
-}else if (guess == shipPosition_2.getAttribute('id')) {
+
+}else if (guess == shipPosition_2.getAttribute('id') && guess != shipPosition_1.getAttribute('id')  ){
 
   messageArea.style.transform = 'translateY(0)';
   message.innerHTML = 'TRAFIONY!';
